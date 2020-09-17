@@ -9,8 +9,8 @@
 #define MATRIX_ROWS 5
 #define MATRIX_COLS 15
 
-#define MATRIX_ROW_PINS { B0, B1, B2, B3, B4 }
-#define MATRIX_COL_PINS { B5, B6, B7, C0, C1, C2, C3, C4, C5, C6, C7, D0, D1, D2, D3 }
+#define MATRIX_ROW_PINS { D4, C6, D7, E6, B4 }
+#define MATRIX_COL_PINS { C7, F1, B6, F0, B2, F4, F5, B0, D1, D3, D2, D5, B7, B5, D0 }
 #define UNUSED_PINS
 
 // COL2ROW means the black mark on diode faces rows
