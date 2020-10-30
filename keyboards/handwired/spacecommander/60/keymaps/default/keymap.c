@@ -10,14 +10,18 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case SLCK_NXT:
             if (record->event.pressed) {
                 // when keycode SLCK_NXT is pressed
-                SEND_STRING(SS_LALT(SS_LSFT(X_DOWN)) SS_TAP(X_ESC));
+                tap_code16(S(A(KC_DOWN)));
+                wait_ms(100);
+                tap_code(KC_ESC);
             }
             break;
 
         case SLCK_PRV:
             if (record->event.pressed) {
                 // when keycode SLCK_PRV is pressed
-                SEND_STRING(SS_LALT(SS_LSFT(X_UP)) SS_TAP(X_ESX));
+                tap_code16(S(A(KC_UP)));
+                wait_ms(100);
+                tap_code(KC_ESC);
             }
             break;
     }
@@ -30,7 +34,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TAB,      KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_LBRC, KC_RBRC, KC_BSLS,
         LCTL_T(KC_ESC), KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,         KC_ENT,
         KC_LSFT,           KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH,             KC_RSFT,
-        KC_DEL,  KC_CAPS, KC_LALT, KC_LGUI,  LT(1, KC_ENT), LT(2, KC_SPC),      KC_RGUI,   KC_RALT, SLCK_NXT, SLCK_PRV,  KC_NO
+        KC_DEL,  KC_CAPS, KC_LALT, KC_LGUI,  LT(1, KC_ENT), LT(2, KC_SPC),      KC_RGUI,   KC_RALT, SLCK_PRV, SLCK_NXT,  KC_NO
     ),
 
     [1] = LAYOUT(
